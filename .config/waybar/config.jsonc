@@ -1,0 +1,126 @@
+{
+  "layer": "top",
+  "position": "top",
+  "mod": "dock",
+  "margin-left": 20,
+  "margin-right": 20,
+  "margin-top": 10,
+  "margin-bottom": 0,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "reload_style_on_change": true,
+  
+  "modules-left": ["custom/end","custom/menu","custom/spacer","custom/console","custom/bluetooth","custom/spacer2","hyprland/workspaces"],
+  "modules-center": ["custom/spacer","clock","custom/spacer"],
+  "modules-right": ["pulseaudio","custom/spacer","tray","custom/spacer2","cpu","memory","battery","network","custom/spacer2","custom/wlogout","custom/end"],
+
+  "custom/menu": {
+    "format": "󰌽",
+    "tootlip": "false",
+    "on-click": "wofi --show drun"
+  },
+
+  "custom/console": {
+    "format": "󰆍",
+    "on-click": "kitty"
+  },
+
+  "pulseaudio": {
+    "format": "{icon}",
+    "rotate": 0,
+    "format-muted": "婢",
+    "tooltip-format": "{icon} {desc} // {volume}%",
+    "scroll-step": 5,
+    "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+     "default": ["", "", ""]
+    }
+  },
+
+  "custom/spacer": {
+    "format": " ",
+    "tootlip": false
+  },
+
+  "custom/spacer2": {
+    "format": " | ",
+    "tootlip": false
+  },
+
+  "custom/end": {
+    "format": "  "
+  },
+  
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+	    "active": ""
+    }
+  },
+
+  "clock": {
+    "format": "{:%I:%M %p}",
+    "rotate": 0,
+    "tootlip": false
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "rotate": 0,
+    "spacing": 3
+  },
+
+  "cpu": {
+    "interval": 1,
+    "format": "{icon}",
+    "rotate": 270,
+    "format-icons": ["󰝦","󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"]
+  },
+
+  "memory": {
+    "interval": 1,
+    "rotate": 270,
+    "format": "{icon}",
+    "format-icons": ["󰝦","󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"],
+    "max-length": 10
+  },
+
+  "network": {
+    "tooltip": true,
+    "format-wifi": "{icon} ",
+    "format-icons": ["󰤟", "󰤢", "󰤥"],
+    "rotate": 0,
+    "format-ethernet": "󰈀 ",
+    "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+    "format-linked": "󰈀 {ifname} (No IP)",
+    "format-disconnected": " ",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-click": "/usr/local/bin/ags -t ControlPanel",
+    "interval": 2
+  },
+
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
+  },
+  "format": "{icon}",
+  "rotate": 0,
+  "format-charging": "<span color='#a6d189'>󱐋</span>",
+  "format-plugged": "󰂄",
+  "format-icons": ["󰝦","󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"]
+  },
+
+  "custom/wlogout": {
+    "format": "󰍃",
+    "on-click": "wlogout"
+  }
+}
